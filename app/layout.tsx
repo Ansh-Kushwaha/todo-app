@@ -32,8 +32,8 @@ export default async function RootLayout({
           ): (
             <div className='flex flex-col'>
               <NavBar />
-              <div className='flex flex-1'>
-                <SideBar />
+              <div className='flex h-[90vh]'>
+                {/* <SideBar /> */}
                 {children}
               </div>
             </div>
