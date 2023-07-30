@@ -12,12 +12,12 @@ function TodoList() {
   const [tasks, loading, error] = useCollection(
     session && collection(database, 'users', session?.user?.email!, 'tasks')
   );
-  console.log(tasks);
+
   return (
     <div className="flex justify-between mx-auto overflow-x-none w-[90%]">
       <table className="table table-zebra">
         <tbody>
-            {tasks?.docs.map(task => (
+            {tasks?.docs.map((task, key) => (
               <Task task={task} />
             ))}
         </tbody>
