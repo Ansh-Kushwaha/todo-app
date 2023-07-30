@@ -15,7 +15,7 @@ function Login() {
           Log in
         </button>
     </div>
-  )
+  ) 
 }
 
 export default Login
