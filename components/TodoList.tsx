@@ -9,7 +9,7 @@ import Task from './Task';
 
 function TodoList() {
   const { data: session } = useSession();
-  const[tasks, loading, error] = useCollection(session && query(collection(database, 'users', session?.user?.email!, 'tasks')));
+  const[tasks, loading, error] = useCollection(session && query(collection(database, 'users', session?.user?.email!, 'tasks'), orderBy('createdAt', 'asc')));
   
   return (
     <div className="flex justify-between mx-auto overflow-x-none w-[90%]">
