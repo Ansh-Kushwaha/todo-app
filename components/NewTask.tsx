@@ -18,7 +18,7 @@ function NewTask({ modalOpen, setModalOpen }: ModalProps) {
     e.preventDefault();
     if (task !== "") {
       console.log("trigerred")
-      const doc = await addDoc(
+      await addDoc(
         collection(database, 'users', session?.user?.email!, 'tasks'), {
           task: task,
           completed: false,
