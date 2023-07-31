@@ -5,7 +5,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import React, { Dispatch, FormEvent, SetStateAction, useState } from "react";
 
-interface ModalProps {
+type ModalProps = {
   modalOpen: boolean;
   setModalOpen: Dispatch<SetStateAction<boolean>>;
 }
@@ -30,7 +30,7 @@ function NewTask({ modalOpen, setModalOpen }: ModalProps) {
   } 
 
   return (
-    <div>
+    <div className='dark:text-gray-100 text-gray-900'>
       <dialog id="my_modal_3" className={`modal ${modalOpen ? 'modal-open' : ''}`}>
         <form method="dialog" className="modal-box"
           onSubmit={createNewTask}

@@ -6,7 +6,7 @@ function AddTask() {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   return (
-    <div className="">
+    <div>
         <button className="btn btn-neutral w-[95%] text-slate-50"
           onClick={() => setModalOpen(true)}
         >

@@ -28,7 +28,14 @@ function TodoList() {
       <table className="table text-md text-gray-800">
         <tbody>
             {tasks?.docs.map((task, key) => (
+              !task?.data().completed && (
               <Task key={key} task={task} toggleComplete={toggleComplete} handleDelete={handleDelete} />
+              )
+            ))}
+            {tasks?.docs.map((task, key) => (
+              task?.data().completed && (
+              <Task key={key} task={task} toggleComplete={toggleComplete} handleDelete={handleDelete} />
+              )
             ))}
         </tbody>
       </table>
