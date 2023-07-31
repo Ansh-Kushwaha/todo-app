@@ -10,7 +10,7 @@ function NavBar() {
         <button className="btn btn-sm btn-square btn-neutral btn-outline text-gray-50"
           onClick={() => signOut()}
         >
-          <GiHamburgerMenu className='h-6 w-6 fill-gray-800' />
+          <GiHamburgerMenu className='h-6 w-6 fill-gray-600' />
         </button>
     </div>
   )

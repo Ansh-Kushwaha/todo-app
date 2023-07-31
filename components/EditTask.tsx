@@ -1,34 +1,4 @@
-'use client'
-
-import { database } from "@/firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { useSession } from "next-auth/react";
-import React, { Dispatch, FormEvent, SetStateAction, useState } from "react";
-
-interface ModalProps {
-  modalOpen: boolean;
-  setModalOpen: Dispatch<SetStateAction<boolean>>;
-}
-
-function NewTask({ modalOpen, setModalOpen }: ModalProps) {
-  const { data: session } = useSession();
-  const [task, setTask] = useState("");
-
-  const createNewTask = async(e: FormEvent) => {
-    e.preventDefault();
-    if (task !== "") {
-      console.log("trigerred")
-      await addDoc(
-        collection(database, 'users', session?.user?.email!, 'tasks'), {
-          task: task,
-          completed: false,
-          createdAt: serverTimestamp(),
-        }
-      )
-      setTask(""); 
-    }
-  } 
-
+function EditTask() {
   return (
     <div>
       <dialog id="my_modal_3" className={`modal ${modalOpen ? 'modal-open' : ''}`}>
@@ -61,4 +31,4 @@ function NewTask({ modalOpen, setModalOpen }: ModalProps) {
   );
 }
 
-export default NewTask;
+export default EditTask

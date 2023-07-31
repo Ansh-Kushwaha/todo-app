@@ -1,24 +1,30 @@
-import { collection, DocumentData, orderBy, query, QueryDocumentSnapshot } from "firebase/firestore"
+import { DocumentData, QueryDocumentSnapshot } from "firebase/firestore"
 import { BsCheckSquare } from 'react-icons/bs'
 import { AiFillEdit } from 'react-icons/ai'
 import { RiDeleteBin6Fill } from 'react-icons/ri'
-import { useSession } from "next-auth/react"
-import { database } from "@/firebase"
-import { useCollection } from "react-firebase-hooks/firestore"
 
 type TaskProps = {
-  key: number;
   task: DocumentData;
+  toggleComplete: (task: DocumentData) => {}
+  handleDelete: (task: DocumentData) => {}
 }
 
-function Task({ key, task }: TaskProps) {
+function Task({ task, toggleComplete, handleDelete }: TaskProps) {
 
   return (
-    <tr>
+    <tr className={`${task.data().completed ? 'bg-green-50 line-through' : ''}`} >
+      <td>
+        <BsCheckSquare className={`${task.data().completed ? 'fill-green-600' : 'fill-gray-600'} hover:cursor-pointer`} 
+          onClick={() => {toggleComplete(task)}}
+        />
+      </td>
       <td>{task.data().task}</td>
-      <td><BsCheckSquare /></td>
       <td><AiFillEdit className='fill-blue-600' /></td>
-      <td><RiDeleteBin6Fill className='fill-red-600' /></td>
+      <td>
+        <RiDeleteBin6Fill className='fill-red-600 hover:cursor-pointer' 
+          onClick={() =>{handleDelete(task)}}
+        />
+      </td>
     </tr>
   )
 }
