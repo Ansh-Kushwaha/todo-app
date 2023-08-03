@@ -24,9 +24,9 @@ function EditTask({task, modalOpen, setModalOpen}: ModalProps) {
 
   return (
 
-    <div className='dark:text-gray-50 text-gray-900'>
+    <div className='dark:text-gray-50 text-gray-90'>
       <dialog id="my_modal_3" className={`modal ${modalOpen ? 'modal-open' : ''}`}>
-        <form method="dialog" className="modal-box"
+        <form method="dialog" className="modal-box h-fit"
           onSubmit={handleEdit}
         >
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
