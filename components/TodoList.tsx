@@ -25,7 +25,7 @@ function TodoList() {
   
   return (
     <div className="flex justify-between mx-auto overflow-x-none w-[90%]">
-      <table className="table text-md text-gray-800">
+      <table className="table text-md text-gray-800 dark:text-slate-100">
         <tbody>
             {tasks?.docs.map((task, key) => (
               !task?.data().completed && (

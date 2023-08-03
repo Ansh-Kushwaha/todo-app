@@ -15,7 +15,7 @@ function Task({ task, toggleComplete, handleDelete }: TaskProps) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   return (
-    <tr className={`${task.data().completed ? 'bg-green-50 line-through' : ''}`} >
+    <tr className={`${task.data().completed ? 'bg-green-50 dark:bg-[#07310b] line-through' : ''}`} >
       <td>
         <BsCheckSquare className={`${task.data().completed ? 'fill-green-600' : 'fill-gray-600'} hover:cursor-pointer`} 
           onClick={() => {toggleComplete(task)}}

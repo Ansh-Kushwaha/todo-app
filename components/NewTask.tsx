@@ -32,7 +32,7 @@ function NewTask({ modalOpen, setModalOpen }: ModalProps) {
   return (
     <div className='dark:text-gray-100 text-gray-900'>
       <dialog id="my_modal_3" className={`modal ${modalOpen ? 'modal-open' : ''}`}>
-        <form method="dialog" className='modal-box h-fit'
+        <form method="dialog" className='modal-box h-fit align-top'
           onSubmit={createNewTask}
         >
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"

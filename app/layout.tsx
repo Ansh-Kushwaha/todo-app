@@ -30,7 +30,7 @@ export default async function RootLayout({
           {!session ? (
             <LoginScreen />
           ): (
-            <div className='flex flex-col'>
+            <div className='flex flex-col h-[100vh] dark:bg-[#1B1B1B]'>
               <NavBar />
               <div className='flex h-[90vh]'>
                 {/* <SideBar /> */}
