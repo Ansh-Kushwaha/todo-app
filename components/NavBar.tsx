@@ -21,7 +21,7 @@ function NavBar() {
           <GiHamburgerMenu className='h-6 w-6 fill-gray-600 dark:fill-gray-300' />
         </button>
         {showMenu && 
-        <div className='absolute top-[64px] right-[10px] flex flex-col items-center rounded-md w-[120px] h-fit shadow-lg z-10 backdrop-blur-xl'>
+        <div className='absolute top-[64px] right-[10px] flex flex-col items-center rounded-md w-[120px] h-fit shadow-lg bg-slate-100 dark:bg-[#121212] z-10'>
           <div>
             {session && 
             <img src={session?.user?.image!} width={64} height={64} className='mt-4 rounded-full hover:cursor-pointer' />
